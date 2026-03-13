@@ -4,3 +4,6 @@
 [submodule "custom_nodes/_sandbox/@ComfUI-Trellis2"]
 	path = custom_nodes/_sandbox/@ComfUI-Trellis2
 	url = https://github.com/visualbruno/ComfyUI-Trellis2
+[submodule "custom_nodes/_managed/comfyui-xishen"]
+	path = custom_nodes/_managed/comfyui-xishen
+	url = https://github.com/xtanqn/comfyui-xishen.git
