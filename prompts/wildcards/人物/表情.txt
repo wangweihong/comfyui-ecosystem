@@ -1,0 +1,21 @@
+laughing #   更容易看到笑容
+expressionless # 面无表情
+happy
+disgust
+smug
+flustered
+confused
+angry
+:p
+:o
+:d
+smile
+frown
+furled brow
+grimace
+naughty_face
+:3
+:<
+:q
+:|
+:/

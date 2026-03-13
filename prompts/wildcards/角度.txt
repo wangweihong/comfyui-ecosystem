@@ -1,0 +1,17 @@
+close up # 特写角度
+closeup # 特写角度
+dutch angle # 倾斜角度，整个人物是倾斜的
+from above # 从上面角度
+from below # 从下方角度
+from side # 侧边角度
+from behind # 后方角度
+from below upskirt # 裙底偷拍角度
+fisheye # 没效果，用by GoPro替代
+panorama # 全景视图
+perspective # 和from above差不多
+pov # 正面角度
+sideways #没效果
+upside-down # 人物上下颠倒，效果有问题
+vanishing point #正视图
+dynamic angle # 动态角度，每次角度都不一样随机
+overhead shot # 仰拍镜头，鸟瞰视角

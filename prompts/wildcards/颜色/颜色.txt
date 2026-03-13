@@ -1,0 +1,4 @@
+# precious_metals.txt
+{rose|yellow|white} gold # 玫瑰金| 黄金| 白金
+platinum # 铂金色
+silver # 银色
