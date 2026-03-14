@@ -44,3 +44,10 @@ high resolution.
 ```
 Restore and colorize this old photo. Enhance details and apply natural 1950-x analog colors. Fix any damage and remove artifacts.
 ```
+
+# 换脸
+```
+将图1中人物的面部和头发替换为图2中人物的面部和头发。人物衣服款式风格颜色保持不变。其他地方保持完全不变。保持色调一致，以便人物更好地融入环境。
+
+Replace the face and hair of the person in Figure 1 with the face and hair of the person in Figure 2, without changing the clothing. Keep everything else exactly the same. Ensure the color tone matches so that the person blends naturally into the environment.
+```

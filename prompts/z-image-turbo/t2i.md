@@ -81,3 +81,20 @@ The lighting is dramatic and directional, creating strong chiaroscuro effects th
 ```
 Extreme close-up of a neutral character's face, silver-white bangs, pale lips, extremely fair skin, looking down, serene and ethereal melancholy, high-key flat lighting, soft and even light, minimal shadows, unreal feeling, vertical composition, visual center on the upper right eye, generous negative space, low saturation warm white tones, beige, light gray, pale pink, unified soft palette, bird's-eye side view, vulnerability, extremely shallow depth of field, high soft focus, blurred glowing edges, Japanese illustration style, liminal photography, aestheticism, digital painting, heavily retouched digital photography, matte porcelain skin texture, silky hair lines, matte creamy smooth texture,
 ```
+
+```
+主体：
+一位拥有精致五官的年轻女性，全身像。紫粉色波浪卷发垂顺光泽，肌肤白皙细腻，妆容精致冷艳。绿色瞳孔深邃神秘，唇色浓郁。
+身着黑色吊带连衣裙晚礼服，外披奢华长款白色羽毛披肩，气场强大。线条冷艳修长。祖母绿钻石珠宝冷光闪耀。
+下身穿着水晶高跟鞋。超模身材，九头身比例，黄金比例腿身比。宽胯，细腰,D罩杯。
+水晶蝴蝶轻盈停留在身旁，翅膀通透粉嫩，如同精灵。空气中漂浮淡金色与粉色光尘，温柔梦幻。
+
+
+动作姿态： 慵懒地半躺在游艇顶层甲板的日光浴垫上，宽大的墨镜架于头上。一手端着斟满香槟的高脚杯，另一手随意搭在屈起的膝盖上。姿态放松惬意，唇角带着慵懒的笑意。眺望着远处的海平线。
+
+环境： 私人豪华游艇的顶层甲板，以白色为主色调的现代简约风格。甲板铺着昂贵的柚木地板，配以白色的亚麻遮阳伞。周围点缀着新鲜的白玫瑰和白色百合花束。游艇停泊在湛蓝的地中海海域，远眺可见沿岸的悬崖和古堡。远处有私人直升机盘旋。
+
+光线： 地中海炽热的阳光慷慨洒落，游艇甲板明亮耀眼。人物小麦色的肌肤在阳光下泛着健康的光泽。香槟杯折射出璀璨的光芒。海面波光粼粼，反射出无数光点。
+
+拍摄风格： 时尚旅行杂志风格，色调明亮饱和。参考高端度假品牌广告，画面充满奢华与慵懒的气息。整体氛围惬意自在。
+```
