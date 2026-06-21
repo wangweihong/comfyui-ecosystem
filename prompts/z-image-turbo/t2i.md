@@ -347,3 +347,60 @@ Starting from a tight close-up of a lone, weathered samurai wearing a snow-cover
 # Execution
 Acknowledge these instructions. Wait for the user to provide the [Image State + Action/Dialogue], and then output ONLY the optimized Cinematic Description based on the Formula and Rules.
 ```
+
+```
+亚洲，真人，背景：深色雕花大窗外，一个穿着雅淡绿汉服的少女，大师级别构图。色彩搭配，静谧美好，绝色容颜，清冷，藤蔓，灯笼
+```
+
+```
+虚幻引擎3D渲染风格，肌肤细腻光滑，电影级光影，光影柔和均匀，阴影极淡，强调肌肤的光泽感与面料的通透质感，细腰宽胯的曲线身材极致诱人，一位身材姣好的亚洲女性，留着深棕色盘发，佩戴着纤细的金属边框眼镜，眼神犀利且略带傲慢，嘴角微微下撇，展现出一种“一脸嫌弃”的轻蔑表情。她身着极具设计感的黑色性感动感内衣，上半身为极简的挂脖式比基尼款式，仅由黑色细绳勾勒轮廓，双乳位置覆盖着精致镂空蕾丝的黑色心形遮羞片；下半身是带有繁复花卉镂空图案的黑色蕾丝丁字裤，两侧连接着黑色的皮革吊带，分别固定在大腿上的蕾丝长筒袜上。她的颈部、锁骨及左臂上可见精致的黑色纹身，左手优雅地抬起，食指指天，仿佛在强调某点，右手自然垂放。背景设定为一个明亮且豪华的卧室，一张巨大的白色床铺占据了画面的左后方，床单平整，光线柔和且充足，营造出一种私密而高级的氛围。整体画面采用写实摄影风格，高分辨率，皮肤质感细腻，光影过渡自然，细节丰富到微米级别，色彩对比鲜明，构图聚焦于人物神态与服饰细节。
+```
+```
+一位性感的亚洲女性，身穿白色花卉刺绣抹胸长裙，高开叉设计，丰满身材，S型曲线，精致的妆容，温柔的眼神，深棕色长发配花朵发饰，右手轻抚发丝，纯色米色背景，摄影棚打光，超高清，8k，细腻皮肤，写实风格，国风美学。
+```
+```
+18-year-old Chinese girl,
+world-class breathtaking beauty,
+ultimate oriental delicate facial
+features, perfect face shape,
+glass-like translucent skin, dewy 
+glowing wet skin texture,
+extremely long straight black
+hair loosely held by a large black
+shark clip, some wet strands
+clinging to cheeks and
+collarbone, flawless S-curve
+figure, tiny waist, full bust and
+hips, long slender legs, taking a
+bath in a large freestanding
+bathtub in front of
+floor-to-ceiling windows, body
+mostly covered by dense white
+creamy foam, only exposing
+delicate collarbones, shoulders,
+arms, graceful neck and lower
+legs, sensitive areas naturally
+and completely hidden by thick
+foam, water surface shimmering
+softly, skin extremely moist,
+glossy and radiant, nighttime
+city view outside the window
+with dim neon lights and deep
+blue darkness, weak cool-toned
+rim light and subtle side-back
+lighting creating mysterious and
+cinematic atmosphere, soft god
+rays and delicate highlights on
+skin and
+```
+
+‵‵`
+一位气质优雅的年轻东亚美女，二十多岁，拥有精致五官和白皙肌肤，戴着细框金丝眼镜，长发优雅地盘起，带有几缕自然垂落的碎发。她坐在米白色现代沙发上，身体微微侧倾，姿态慵懒而性感。
+她穿着一条黑色低胸裹身连衣裙，肩部完全裸露，深V领口清晰展现丰满的乳沟，裙子紧贴身体曲线，修长的双腿包裹着黑色超薄透肉丝袜。她一只手轻轻搭在自己大腿上，另一只手撑在沙发上，眼神柔媚而略带魅惑地望向镜头，嘴角带着若有若无的浅笑。
+背景是温馨高级的客厅，身后有带暖光的台灯、整洁的木质书架、绿色盆栽、装饰画和陶瓷摆件。整体采用柔和温暖的室内灯光，氛围优雅暧昧，画面质感细腻真实，电影感强，8K细节。不要有水印
+```
+
+```
+这是一张特写人像摄影作品，主体位于画面中心偏右的构图布局中，前景为一名坐在黑色皮质汽车座椅上的年轻女性，她留着黑色长发，带有浅色挑染，头发向后束起并用透明发饰固定，面部表情俏皮且略带挑逗，嘴角微张，舌头微微伸出，右臂抬起在脸颊旁比出“V”字手势，右手涂有粉色指甲油，佩戴金色圆环耳环，颈部戴着一条细链项链，身穿一套淡紫色系带比基尼泳衣，细绳在胸前和腰侧打结，展现出丰满的胸部曲线和清晰的腹部线条，中景清晰呈现人物身体轮廓及座椅靠背的纹理，背景通过车窗展现雨夜街景，窗外可见模糊的霓虹灯牌（紫色和绿色），车窗玻璃上有雨水痕迹和反光，背景处于浅景深虚化状态，营造出柔和的氛围，整体色调偏暖，以肤色高光、淡紫色泳衣和窗外冷色调霓虹形成冷暖对比，光线来源为车内正面补光结合外部微弱环境光，人物面部、锁骨、肩颈和腿部呈现自然高光，背景保持低曝光深黑虚化，侧后方轮廓光勾勒出发丝和身体边缘，增强了主体与背景的分离度，镜头类型推测为中长焦定焦镜头（如50mm或85mm），焦距适中，景深较浅，焦点集中在人物面部和上半身，角度为平视或略微仰视的自拍视角，强调了人物的曲线美和自信神态。
+
+```
