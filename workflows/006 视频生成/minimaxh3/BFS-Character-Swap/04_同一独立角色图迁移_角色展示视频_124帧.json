@@ -1,0 +1,1286 @@
+{
+  "id": "970aec6f-78eb-59a2-b684-afc7ab32ff8f",
+  "revision": 0,
+  "last_node_id": 100,
+  "last_link_id": 27,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "UNETLoader",
+      "title": "加载 H3 Ref2VA · 本地INT8",
+      "pos": [
+        0,
+        1400
+      ],
+      "size": [
+        430,
+        180
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            12
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "minmaxh3/diffusion_models/minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+        "default"
+      ],
+      "widgets_values_named": {
+        "unet_name": "minmaxh3/diffusion_models/minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    {
+      "id": 2,
+      "type": "CLIPLoader",
+      "title": "加载 H3 Qwen3-VL 32B · INT8",
+      "pos": [
+        450,
+        1400
+      ],
+      "size": [
+        430,
+        180
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "text_encoders/qwen3vl_32b_minimax_h3_int8_convrot.safetensors",
+        "minimax",
+        "default"
+      ],
+      "widgets_values_named": {
+        "clip_name": "text_encoders/qwen3vl_32b_minimax_h3_int8_convrot.safetensors",
+        "type": "minimax",
+        "device": "default"
+      }
+    },
+    {
+      "id": 3,
+      "type": "VAELoader",
+      "title": "加载 H3 视频VAE · INT8",
+      "pos": [
+        900,
+        1400
+      ],
+      "size": [
+        430,
+        180
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            6,
+            10,
+            24
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "vae/minimax_h3_video_vae_int8_convrot.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "vae/minimax_h3_video_vae_int8_convrot.safetensors"
+      }
+    },
+    {
+      "id": 4,
+      "type": "LoadImage",
+      "title": "① 同一张独立原创角色图 · 非视频首帧",
+      "pos": [
+        0,
+        0
+      ],
+      "size": [
+        430,
+        850
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            7
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "h3_bfs_original_teal_character_20261014.png",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "h3_bfs_original_teal_character_20261014.png"
+      }
+    },
+    {
+      "id": 5,
+      "type": "LoadVideo",
+      "title": "② 预处理动作片段 · 24fps / 124帧",
+      "pos": [
+        450,
+        0
+      ],
+      "size": [
+        430,
+        850
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            1
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadVideo"
+      },
+      "widgets_values": [
+        "h3_bfs_character_showcase_0s_24fps.mp4"
+      ],
+      "widgets_values_named": {
+        "file": "h3_bfs_character_showcase_0s_24fps.mp4"
+      }
+    },
+    {
+      "id": 6,
+      "type": "Video Slice",
+      "title": "截取前5.17秒 · 原音轨同步截取",
+      "pos": [
+        450,
+        930
+      ],
+      "size": [
+        430,
+        180
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Video Slice"
+      },
+      "widgets_values": [
+        0.0,
+        5.166666666666667,
+        false
+      ],
+      "widgets_values_named": {
+        "start_time": 0.0,
+        "duration": 5.166666666666667,
+        "strict_duration": false
+      }
+    },
+    {
+      "id": 7,
+      "type": "GetVideoComponents",
+      "title": "取画面与源音轨 · 素材已确认24fps",
+      "pos": [
+        900,
+        930
+      ],
+      "size": [
+        430,
+        180
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            3
+          ]
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            26
+          ]
+        },
+        {
+          "name": "fps",
+          "type": "FLOAT",
+          "links": null
+        },
+        {
+          "name": "bit_depth",
+          "type": "COMBO",
+          "links": null
+        },
+        {
+          "name": "color_space",
+          "type": "COMBO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GetVideoComponents"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 8,
+      "type": "ImageFromBatch",
+      "title": "严格124帧 · H3的17n+5网格",
+      "pos": [
+        1350,
+        930
+      ],
+      "size": [
+        430,
+        180
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageFromBatch"
+      },
+      "widgets_values": [
+        0,
+        124
+      ],
+      "widgets_values_named": {
+        "batch_index": 0,
+        "length": 124
+      }
+    },
+    {
+      "id": 9,
+      "type": "ImageScale",
+      "title": "Guide对齐 · 1024×576等比居中裁切",
+      "pos": [
+        1800,
+        930
+      ],
+      "size": [
+        430,
+        180
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            11
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageScale"
+      },
+      "widgets_values": [
+        "lanczos",
+        1024,
+        576,
+        "center"
+      ],
+      "widgets_values_named": {
+        "upscale_method": "lanczos",
+        "width": 1024,
+        "height": 576,
+        "crop": "center"
+      }
+    },
+    {
+      "id": 10,
+      "type": "MiniMaxH3ReferenceToVideo",
+      "title": "③ Picture1提供身份 · body_swap提示词",
+      "pos": [
+        900,
+        0
+      ],
+      "size": [
+        750,
+        850
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 5
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 6,
+          "shape": 7
+        },
+        {
+          "name": "audio_vae",
+          "type": "VAE",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "ref_images.ref_image_0",
+          "type": "IMAGE",
+          "link": 7,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            8
+          ]
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            9,
+            21
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ReferenceToVideo"
+      },
+      "widgets_values": [
+        "body_swap:\nsubject_definitions:\n<Subject 1> is the original adult female character shown in <Picture 1>, with a short copper-orange bob haircut and bangs, brown eyes, a fitted opaque teal sleeveless full-length athletic jumpsuit, a bright orange waist stripe, and white flat sneakers with orange accents. Her face, hair, skin, normal athletic body proportions and clothing define the replacement character.\nsummary:\n[video generation + reference] Replace the main human or humanoid performer in the aligned guide with <Subject 1>. Follow the source performance, camera and editing timing frame by frame.\nretention_analysis:\n<Subject 1>: fully_preserved - Preserve the orange bob, face, teal full-length jumpsuit, orange waist stripe and white orange-accented sneakers of <Picture 1>.\nGuide scene: fully_preserved - Preserve the source environment, background, props, lighting, camera, framing, motion, timing and cuts. Keep all existing support objects, including any pole, in their original positions.\ndetailed_description:\nOnly the main performer becomes <Subject 1>. Match the guide's complete body movement, torso rotation, limb poses, upside-down orientation, hand contact, head direction and facial expressions naturally. Her teal athletic clothing follows the moving body. Her short orange hair moves naturally. Retain the reference character's normal human anatomy; do not copy another character's horns, wings, tail, hair, face or clothes onto her. Follow the guide's shot transitions rather than creating a fixed studio portrait. Do not use the gray reference background in the output. No additional people or added text or watermark.",
+        1024,
+        576,
+        124,
+        "match"
+      ],
+      "widgets_values_named": {
+        "prompt": "body_swap:\nsubject_definitions:\n<Subject 1> is the original adult female character shown in <Picture 1>, with a short copper-orange bob haircut and bangs, brown eyes, a fitted opaque teal sleeveless full-length athletic jumpsuit, a bright orange waist stripe, and white flat sneakers with orange accents. Her face, hair, skin, normal athletic body proportions and clothing define the replacement character.\nsummary:\n[video generation + reference] Replace the main human or humanoid performer in the aligned guide with <Subject 1>. Follow the source performance, camera and editing timing frame by frame.\nretention_analysis:\n<Subject 1>: fully_preserved - Preserve the orange bob, face, teal full-length jumpsuit, orange waist stripe and white orange-accented sneakers of <Picture 1>.\nGuide scene: fully_preserved - Preserve the source environment, background, props, lighting, camera, framing, motion, timing and cuts. Keep all existing support objects, including any pole, in their original positions.\ndetailed_description:\nOnly the main performer becomes <Subject 1>. Match the guide's complete body movement, torso rotation, limb poses, upside-down orientation, hand contact, head direction and facial expressions naturally. Her teal athletic clothing follows the moving body. Her short orange hair moves naturally. Retain the reference character's normal human anatomy; do not copy another character's horns, wings, tail, hair, face or clothes onto her. Follow the guide's shot transitions rather than creating a fixed studio portrait. Do not use the gray reference background in the output. No additional people or added text or watermark.",
+        "width": 1024,
+        "height": 576,
+        "length": 124,
+        "ref_image_size": "match"
+      }
+    },
+    {
+      "id": 11,
+      "type": "MiniMaxH3AddGuide",
+      "title": "④ 对齐源视频潜变量 · 关键AddGuide",
+      "pos": [
+        1800,
+        0
+      ],
+      "size": [
+        430,
+        180
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 8
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": 9
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 10,
+          "shape": 7
+        },
+        {
+          "name": "audio_vae",
+          "type": "VAE",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 11,
+          "shape": 7
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            16
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3AddGuide"
+      },
+      "widgets_values": [
+        0
+      ],
+      "widgets_values_named": {
+        "frame_idx": 0
+      }
+    },
+    {
+      "id": 12,
+      "type": "LoraLoaderModelOnly",
+      "title": "加载正式Character Swap LoRA · 强度1",
+      "pos": [
+        1350,
+        1400
+      ],
+      "size": [
+        430,
+        180
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 12
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            13
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoaderModelOnly"
+      },
+      "widgets_values": [
+        "minimaxh3/minimax_h3_character_swap_v1.0_ref2va_r64_gl.safetensors",
+        1.0
+      ],
+      "widgets_values_named": {
+        "lora_name": "minimaxh3/minimax_h3_character_swap_v1.0_ref2va_r64_gl.safetensors",
+        "strength_model": 1.0
+      }
+    },
+    {
+      "id": 13,
+      "type": "MiniMaxH3SigmaShift",
+      "title": "基础Ref2VA调度 · shift12/3",
+      "pos": [
+        1800,
+        1400
+      ],
+      "size": [
+        430,
+        180
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 13
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            14,
+            15
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3SigmaShift"
+      },
+      "widgets_values": [
+        12.0,
+        3.0
+      ],
+      "widgets_values_named": {
+        "shift_video": 12.0,
+        "shift_audio": 3.0
+      }
+    },
+    {
+      "id": 20,
+      "type": "RandomNoise",
+      "title": "固定seed · 20261014",
+      "pos": [
+        2250,
+        0
+      ],
+      "size": [
+        430,
+        180
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            17
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RandomNoise"
+      },
+      "widgets_values": [
+        20261014,
+        "fixed"
+      ],
+      "widgets_values_named": {
+        "noise_seed": 20261014,
+        "control_after_generate": "fixed"
+      }
+    },
+    {
+      "id": 21,
+      "type": "KSamplerSelect",
+      "title": "基础模型 · er_sde",
+      "pos": [
+        2250,
+        230
+      ],
+      "size": [
+        430,
+        180
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "links": [
+            19
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerSelect"
+      },
+      "widgets_values": [
+        "er_sde"
+      ],
+      "widgets_values_named": {
+        "sampler_name": "er_sde"
+      }
+    },
+    {
+      "id": 22,
+      "type": "BasicScheduler",
+      "title": "基础模型16步 · 未叠加Turbo",
+      "pos": [
+        2250,
+        430
+      ],
+      "size": [
+        430,
+        180
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 14
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            20
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicScheduler"
+      },
+      "widgets_values": [
+        "simple",
+        16,
+        1.0
+      ],
+      "widgets_values_named": {
+        "scheduler": "simple",
+        "steps": 16,
+        "denoise": 1.0
+      }
+    },
+    {
+      "id": 23,
+      "type": "BasicGuider",
+      "title": "CFG1 · 参考身份与Guide动作条件",
+      "pos": [
+        2250,
+        650
+      ],
+      "size": [
+        430,
+        180
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 15
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 16
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "links": [
+            18
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicGuider"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 24,
+      "type": "SamplerCustomAdvanced",
+      "title": "⑤ Character Swap采样 · AV latent",
+      "pos": [
+        2700,
+        0
+      ],
+      "size": [
+        420,
+        270
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 17
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 18
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 19
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 20
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 21
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            22
+          ]
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SamplerCustomAdvanced"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 25,
+      "type": "LTXVSeparateAVLatent",
+      "title": "分离视频潜变量 · 不使用生成音频",
+      "pos": [
+        2700,
+        370
+      ],
+      "size": [
+        430,
+        180
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "av_latent",
+          "type": "LATENT",
+          "link": 22
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video_latent",
+          "type": "LATENT",
+          "links": [
+            23
+          ]
+        },
+        {
+          "name": "audio_latent",
+          "type": "LATENT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LTXVSeparateAVLatent"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 26,
+      "type": "VAEDecode",
+      "title": "解码124帧角色替换结果",
+      "pos": [
+        2700,
+        580
+      ],
+      "size": [
+        430,
+        180
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 23
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 24
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            25
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 27,
+      "type": "CreateVideo",
+      "title": "保留源音轨 · 24fps",
+      "pos": [
+        3150,
+        0
+      ],
+      "size": [
+        430,
+        180
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 25
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 26,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            27
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CreateVideo"
+      },
+      "widgets_values": [
+        24.0,
+        "auto",
+        "sRGB",
+        "none"
+      ],
+      "widgets_values_named": {
+        "fps": 24.0,
+        "bit_depth": "auto",
+        "color_space": "sRGB",
+        "codec": "none"
+      }
+    },
+    {
+      "id": 28,
+      "type": "SaveVideo",
+      "title": "保存换角Demo · MP4",
+      "pos": [
+        3150,
+        280
+      ],
+      "size": [
+        430,
+        440
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 27
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveVideo"
+      },
+      "widgets_values": [
+        "h3_character_swap/04_同一独立角色图迁移_角色展示视频_124帧",
+        "mp4",
+        "h264",
+        "auto"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "h3_character_swap/04_同一独立角色图迁移_角色展示视频_124帧",
+        "format": "mp4",
+        "format.codec": "h264",
+        "format.codec.encoding": "auto"
+      }
+    },
+    {
+      "id": 100,
+      "type": "MarkdownNote",
+      "title": "同一独立角色图 · 两视频动作迁移测试",
+      "pos": [
+        0,
+        1650
+      ],
+      "size": [
+        2200,
+        450
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "# 04_同一独立角色图迁移_角色展示视频_124帧\n同一张独立生成的原创角色静态PNG，绝不是从两段视频提取的人物。\nLoadImage读取h3_bfs_original_teal_character_20261014.png；两个测试始终使用同一文件和同一SHA-256。\n原动作视频：4fa2a8024512e993610d4bc14a18f013.mp4，从0.0秒开始截取124帧/24fps（约5.17秒）。\n输入片段：h3_bfs_character_showcase_0s_24fps.mp4，钢管源60fps已转24fps，角色展示源24fps已按帧截取；保留源音轨。\n1024×576，16步er_sde/simple、CFG1、shift12/3、Character Swap正式LoRA强度1，seed20261014，ref_image_size=match。\n目标身份仅从LoadImage→ReferenceToVideo提供，源视频仅从AddGuide提供动作和场景；不做双向身份互换。\n03测试离地、翻转和倒挂；04原视频存在人物与翅膀特写的镜头切换，该片段不是全程人物舞蹈，需检查无人体画面的失败情况。\n背景和字样由模型重新生成，不保证逐像素一致。output/h3_character_swap/。原01/02保留为之前的视频互换实验。"
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      5,
+      0,
+      6,
+      0,
+      "VIDEO"
+    ],
+    [
+      2,
+      6,
+      0,
+      7,
+      0,
+      "VIDEO"
+    ],
+    [
+      3,
+      7,
+      0,
+      8,
+      0,
+      "IMAGE"
+    ],
+    [
+      4,
+      8,
+      0,
+      9,
+      0,
+      "IMAGE"
+    ],
+    [
+      5,
+      2,
+      0,
+      10,
+      0,
+      "CLIP"
+    ],
+    [
+      6,
+      3,
+      0,
+      10,
+      1,
+      "VAE"
+    ],
+    [
+      7,
+      4,
+      0,
+      10,
+      3,
+      "IMAGE"
+    ],
+    [
+      8,
+      10,
+      0,
+      11,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      9,
+      10,
+      1,
+      11,
+      1,
+      "LATENT"
+    ],
+    [
+      10,
+      3,
+      0,
+      11,
+      2,
+      "VAE"
+    ],
+    [
+      11,
+      9,
+      0,
+      11,
+      4,
+      "IMAGE"
+    ],
+    [
+      12,
+      1,
+      0,
+      12,
+      0,
+      "MODEL"
+    ],
+    [
+      13,
+      12,
+      0,
+      13,
+      0,
+      "MODEL"
+    ],
+    [
+      14,
+      13,
+      0,
+      22,
+      0,
+      "MODEL"
+    ],
+    [
+      15,
+      13,
+      0,
+      23,
+      0,
+      "MODEL"
+    ],
+    [
+      16,
+      11,
+      0,
+      23,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      17,
+      20,
+      0,
+      24,
+      0,
+      "NOISE"
+    ],
+    [
+      18,
+      23,
+      0,
+      24,
+      1,
+      "GUIDER"
+    ],
+    [
+      19,
+      21,
+      0,
+      24,
+      2,
+      "SAMPLER"
+    ],
+    [
+      20,
+      22,
+      0,
+      24,
+      3,
+      "SIGMAS"
+    ],
+    [
+      21,
+      10,
+      1,
+      24,
+      4,
+      "LATENT"
+    ],
+    [
+      22,
+      24,
+      0,
+      25,
+      0,
+      "LATENT"
+    ],
+    [
+      23,
+      25,
+      0,
+      26,
+      0,
+      "LATENT"
+    ],
+    [
+      24,
+      3,
+      0,
+      26,
+      1,
+      "VAE"
+    ],
+    [
+      25,
+      26,
+      0,
+      27,
+      0,
+      "IMAGE"
+    ],
+    [
+      26,
+      7,
+      1,
+      27,
+      1,
+      "AUDIO"
+    ],
+    [
+      27,
+      27,
+      0,
+      28,
+      0,
+      "VIDEO"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "workflowName": "04_同一独立角色图迁移_角色展示视频_124帧",
+    "frontendVersion": "1.53.10",
+    "ds": {
+      "scale": 0.3,
+      "offset": [
+        50,
+        70
+      ]
+    }
+  },
+  "version": 0.4
+}
